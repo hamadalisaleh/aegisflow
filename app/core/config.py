@@ -10,4 +10,8 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
+<<<<<<< HEAD
 settings = Settings()
+=======
+settings = Settings()
+>>>>>>> 9c4d87fab85b1e106f349f81a2e7ae6eee30e18b
