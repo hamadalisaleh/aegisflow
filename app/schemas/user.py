@@ -1,8 +1,5 @@
-from pydantic import BaseModel, EmailStr
-<<<<<<< HEAD
 from datetime import datetime
-=======
->>>>>>> 9c4d87fab85b1e106f349f81a2e7ae6eee30e18b
+from pydantic import BaseModel, EmailStr
 
 class UserBase(BaseModel):
     email: EmailStr
@@ -13,12 +10,8 @@ class UserCreate(UserBase):
 
 class UserResponse(UserBase):
     id: str
-    role: str
     is_active: bool
-<<<<<<< HEAD
-    created_at: datetime | None = None
-=======
->>>>>>> 9c4d87fab85b1e106f349f81a2e7ae6eee30e18b
+    created_at: datetime
 
     class Config:
         from_attributes = True
@@ -26,3 +19,6 @@ class UserResponse(UserBase):
 class Token(BaseModel):
     access_token: str
     token_type: str
+
+class TokenData(BaseModel):
+    user_id: str | None = None

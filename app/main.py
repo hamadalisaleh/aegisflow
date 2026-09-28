@@ -1,10 +1,8 @@
 from fastapi import FastAPI
 from app.api.auth import router as auth_router
-<<<<<<< HEAD
 from app.api.projects import router as projects_router
+from app.api.agents import router as agents_router
 from app.api.tasks import router as tasks_router
-=======
->>>>>>> 9c4d87fab85b1e106f349f81a2e7ae6eee30e18b
 
 app = FastAPI(
     title="AegisFlow API",
@@ -12,12 +10,11 @@ app = FastAPI(
     version="0.1.0"
 )
 
+# تضمين مسارات النظام الأساسية
 app.include_router(auth_router, prefix="/api/v1")
-<<<<<<< HEAD
 app.include_router(projects_router, prefix="/api/v1")
-app.include_router(tasks_router)
-=======
->>>>>>> 9c4d87fab85b1e106f349f81a2e7ae6eee30e18b
+app.include_router(agents_router, prefix="/api/v1")
+app.include_router(tasks_router, prefix="/api/v1")
 
 @app.get("/health")
 def health_check():
